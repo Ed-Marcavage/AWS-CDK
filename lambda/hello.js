@@ -1,6 +1,3 @@
-import * as cdk from "aws-cdk-lib";
-import * as lambda from "aws-cdk-lib/aws-lambda";
-
 exports.handler = async function (event) {
   console.log("request:", JSON.stringify(event, undefined, 2));
   return {
