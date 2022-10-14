@@ -27,9 +27,12 @@ The `cdk.json` file tells the CDK Toolkit how to execute your app.
 - scope: the first argument is always the scope in which this construct is created. In almost all cases, you’ll be defining constructs within the scope of current construct, which means you’ll usually just want to pass this for the first argument. Make a habit out of it.
 - id: the second argument is the local identity of the construct. It’s an ID that has to be unique amongst construct within the same scope. The CDK uses this identity to calculate the CloudFormation Logical ID for each resource defined within this scope. To read more about IDs in the CDK, see the CDK user manual.
 - props: the last (sometimes optional) argument is always a set of initialization properties. Those are specific to each construct. For example, the lambda.Function construct accepts properties like runtime, code and handler. You can explore the various options using your IDE’s auto-complete or in the online documentation.
+  -cdk watch is similar to cdk deploy except that instead of being a one-shot operation, it monitors your code and assets for changes and attempts to perform a deployment automatically when a change is detected. By default, cdk watch will use the --hotswap flag, which inspects the changes and determines if those changes can be hotswapped. Calling cdk watch --no-hotswap will disable the hotswap behavior.
 
 ## Common Cmds
 
 cdk synth
 cdk bootstrap
 cdk deploy
+cdk deploy --hotswap -> We can speed up that deployment time with this cmd
+cdk watch
